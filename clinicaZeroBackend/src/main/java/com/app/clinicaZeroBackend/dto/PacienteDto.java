@@ -12,7 +12,6 @@ public class PacienteDto {
 
     @NotBlank
     private String nombre;
-
     private String apellido;
     private String fecha_inicio;
     private String fecha_nacimiento;

@@ -4,12 +4,10 @@ import com.app.clinicaZeroBackend.dto.Mensaje;
 import com.app.clinicaZeroBackend.dto.PacienteDto;
 import com.app.clinicaZeroBackend.entity.Paciente;
 import com.app.clinicaZeroBackend.service.PacienteService;
-import jakarta.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.NumberUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

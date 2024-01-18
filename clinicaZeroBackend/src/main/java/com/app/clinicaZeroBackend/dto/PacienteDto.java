@@ -1,13 +1,12 @@
 package com.app.clinicaZeroBackend.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Data
-@Getter
-@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class PacienteDto {
 
     @NotBlank
@@ -22,7 +21,7 @@ public class PacienteDto {
     private String sexo;
     private String email;
 
-    public PacienteDto() {
+    /*public PacienteDto() {
     }
 
     public PacienteDto(String nombre, String apellido, String fecha_inicio, String fecha_nacimiento, int carnet_identidad, int telefono_celular, int edad, String sexo, String email) {
@@ -35,5 +34,5 @@ public class PacienteDto {
         this.edad = edad;
         this.sexo = sexo;
         this.email = email;
-    }
+    }*/
 }

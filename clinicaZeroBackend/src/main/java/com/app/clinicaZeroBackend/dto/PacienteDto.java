@@ -1,5 +1,7 @@
 package com.app.clinicaZeroBackend.dto;
 
+import com.app.clinicaZeroBackend.entity.Antecedentes;
+import com.app.clinicaZeroBackend.entity.SignosVitales;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -20,19 +22,7 @@ public class PacienteDto {
     private int edad;
     private String sexo;
     private String email;
+    private Antecedentes antecedentes;
+    private SignosVitales signosVitales;
 
-    /*public PacienteDto() {
-    }
-
-    public PacienteDto(String nombre, String apellido, String fecha_inicio, String fecha_nacimiento, int carnet_identidad, int telefono_celular, int edad, String sexo, String email) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fecha_inicio = fecha_inicio;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.carnet_identidad = carnet_identidad;
-        this.telefono_celular = telefono_celular;
-        this.edad = edad;
-        this.sexo = sexo;
-        this.email = email;
-    }*/
 }

@@ -26,21 +26,19 @@ public class Paciente {
     private String sexo;
     private String email;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             name = "antecedente_id",
             referencedColumnName = "idAntecedente"
     )
     private Antecedentes antecedentes;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(
             name = "signos_vitales_id",
             referencedColumnName = "idVital"
     )
     private SignosVitales signosVitales;
-    /*public Paciente() {
-    }*/
 
     public Paciente(String nombre, String apellido, String fecha_inicio, String fecha_nacimiento, int carnet_identidad, int telefono_celular, int edad, String sexo, String email) {
         this.nombre = nombre;

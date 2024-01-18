@@ -64,7 +64,9 @@ public class PacienteController {
                 pacienteDto.getTelefono_celular(),
                 pacienteDto.getEdad(),
                 pacienteDto.getSexo(),
-                pacienteDto.getEmail()
+                pacienteDto.getEmail(),
+                pacienteDto.getAntecedentes(),
+                pacienteDto.getSignosVitales()
         );
         pacienteService.createPaciente(paciente);
         return new ResponseEntity<>(new Mensaje("paciente creado exitosamente"), HttpStatus.OK);
@@ -92,6 +94,8 @@ public class PacienteController {
         paciente.setEdad(pacienteDto.getEdad());
         paciente.setSexo(pacienteDto.getSexo());
         paciente.setEmail(pacienteDto.getEmail());
+        paciente.setAntecedentes(pacienteDto.getAntecedentes());
+        paciente.setSignosVitales(pacienteDto.getSignosVitales());
 
         pacienteService.createPaciente(paciente);
         return new ResponseEntity<>(new Mensaje("paciente actualizado"), HttpStatus.OK);

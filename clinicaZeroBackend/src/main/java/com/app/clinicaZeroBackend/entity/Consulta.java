@@ -1,9 +1,6 @@
 package com.app.clinicaZeroBackend.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +20,25 @@ public class Consulta {
     private String fecha;
     private int costo;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "odontograma_id",
+            referencedColumnName = "idOdontograma"
+    )
+    private Odontograma odontograma;
+
     public Consulta(int numero, String fecha, int costo) {
         this.numero = numero;
         this.fecha = fecha;
         this.costo = costo;
     }
+
+    public Consulta(int numero, String fecha, int costo, Odontograma odontograma) {
+        this.numero = numero;
+        this.fecha = fecha;
+        this.costo = costo;
+        this.odontograma = odontograma;
+    }
+
+
 }

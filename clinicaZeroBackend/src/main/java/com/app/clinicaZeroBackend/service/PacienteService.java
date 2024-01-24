@@ -39,7 +39,7 @@ public class PacienteService {
     public boolean existById(int id){
         return pacienteRepository.existsById(id);
     }
-        public boolean existByNombre(String nombre){
+    public boolean existByNombre(String nombre){
             return pacienteRepository.existsByNombre(nombre);
     }
 }

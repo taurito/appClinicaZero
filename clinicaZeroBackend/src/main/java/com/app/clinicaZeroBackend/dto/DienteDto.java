@@ -1,6 +1,8 @@
-package com.app.clinicaZeroBackend.entity;
+package com.app.clinicaZeroBackend.dto;
 
-import jakarta.persistence.*;
+import com.app.clinicaZeroBackend.entity.Odontograma;
+import com.app.clinicaZeroBackend.entity.TipoTratamiento;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,31 +10,23 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Diente {
+public class DienteDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idDiente;
+    @NotBlank
     private String nombre;
     private int numero;
     private int posicion;
     private String estado;
     private String descripcion;
     private int costo;
-
-    @ManyToOne
-    @JoinColumn(name = "odontograma_id")
-    private Odontograma odontograma;
-
-    @OneToMany(mappedBy = "diente", cascade = CascadeType.ALL)
+    Odontograma odontograma;
     private List<TipoTratamiento> tipoTratamientos;
 
-    public Diente(String nombre, int numero, int posicion, String estado, String descripcion, int costo) {
+    public DienteDto(String nombre, int numero, int posicion, String estado, String descripcion, int costo) {
         this.nombre = nombre;
         this.numero = numero;
         this.posicion = posicion;
@@ -41,8 +35,7 @@ public class Diente {
         this.costo = costo;
     }
 
-    public Diente(String nombre, int numero, int posicion, String estado, String descripcion, int costo, Odontograma odontograma, List<TipoTratamiento> tipoTratamientos) {
-        this.nombre = nombre;
+    public DienteDto(int numero, int posicion, String estado, String descripcion, int costo, Odontograma odontograma, List<TipoTratamiento> tipoTratamientos) {
         this.numero = numero;
         this.posicion = posicion;
         this.estado = estado;
